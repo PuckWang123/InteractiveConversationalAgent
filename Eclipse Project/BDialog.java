@@ -1,29 +1,19 @@
-
-
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
-
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.ScrollPane;
 import java.awt.Font;
 import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.TitledBorder;
 
@@ -31,12 +21,6 @@ import com.sun.glass.events.KeyEvent;
 import java.awt.event.KeyAdapter;
 @SuppressWarnings("serial")
 public class BDialog extends JDialog {
-	//
-	//    private JButton btnAnswer = new JButton("Talk");
-	//    private JButton btnExit = new JButton("Exit");
-	//    private JTextField txtTalk = new JTextField(60);
-	//    private JLabel txtResponse = new JLabel("This is a message");
-	//    private String result;
 	JFrame yeBot;
 	private String result;
 	private JTextField input;
@@ -166,7 +150,7 @@ public class BDialog extends JDialog {
 	//displays kanyes reply in chatBox
 	public String showInputDialog(String msg){
 		chatBox.setText(chatBox.getText().concat("Kanye: "+msg)+"\n\n");
-		setVisible(true);
+//		setVisible(true);
 		return msg;
 	}
 	//tells our program what the user entered so it can respond accordingly

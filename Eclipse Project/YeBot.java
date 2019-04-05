@@ -15,31 +15,29 @@ public class YeBot {
 		MagicBooleans.trace_mode = false;
 		Bot yebot = new Bot("YeBot",dir.substring(0,dir.length()-2));
 		yebot.writeAIMLFiles();
-		String ans;
 		
 		Chat session = new Chat(yebot);
 		conversation = new Conversation();
-
+		
 		String input = "test";
-		String output;
 		int i = 1;
-			
 		while(!conversation.isContained(input)){
 			input = null;
 			input = conversation.recieveInput();
-			System.out.println(input);
+			
+			input = handle_spell(input);
 			
 			if (input!=""&&input!=null&&input.length()>1||i==1) {
 				if(input==""||input==null||input.length()<1) {
 					//start conversation
-					output = conversation.response("Ye is in the BUILDING!");
+					conversation.response("Ye is in the BUILDING NOW!");
 					i=0;	
 				}
 				else if(conversation.isContained(input)) {
 					//user calls for exiting the conversation
 					try {
 						Thread.sleep(500);
-						output = conversation.response(session.multisentenceRespond(input));
+						conversation.response(session.multisentenceRespond(input));
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -48,17 +46,34 @@ public class YeBot {
 				}
 				else {
 					//regular response
-					output = conversation.response(session.multisentenceRespond(input));
+					conversation.response(session.multisentenceRespond(input));
 				}
-			}	
+			}
 		}
-		System.exit(1); 	//This statement terminates the program	
+		System.exit(1);//This statement terminates the program	
+	}
+	
+	public static void wordnet() {
 		
-			//Do you want to start the conversation over? make sure you get valid input (Done)
-//			ans = conversation.response("Do you want to start our conversation over? (Y/N)"); 
-//			while(ans != null && !ans.toUpperCase().equals("Y") && !ans.toUpperCase().equals("N"))
-//				ans = conversation.response("Invalid input. Do you want to start our conversation over? (Y/N)");
-		//while(ans.toUpperCase().equals("Y"));	//start over if answer is "Y" or "y"
-
+	}
+	
+	public static String handle_spell(String input) {
+	    Stemmer s = new Stemmer();
+		try {
+			input = input.toLowerCase();
+			while(true) {
+				for(int i = 0; i < input.length();i++) {
+					s.add(input.charAt(i));
+				}
+				s.stem();
+				input = s.toString();
+				System.out.println(input);
+				break;
+			}
+			return input;
+		}catch(NullPointerException e) {
+//			e.printStackTrace();
+		}
+		return "";
 	}
 }

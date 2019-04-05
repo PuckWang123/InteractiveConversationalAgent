@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
-<category><pattern>I AM *</pattern>
-<template><srai>MY NAME IS *</srai></template>
-</category>
-<category><pattern>_ I AM *</pattern>
-<template><srai>MY NAME IS *</srai></template>
-</category>
-<category><pattern>_ MY NAME IS *</pattern>
-<template><srai>MY NAME IS *</srai></template>
-</category>
 <category><pattern>GOOD *</pattern>
 <template><srai>GOOD</srai></template>
 </category>
@@ -32,5 +23,32 @@
 </category>
 <category><pattern>SEE YOU</pattern>
 <template><srai>GOODBYE</srai></template>
+</category>
+<category><pattern>WHAT DO YOU USUALLY WEAR *</pattern>
+<template>I always wore the 3 stripes and a baby tee</template>
+</category>
+<category><pattern>WHAT ARE YOU DOING NOW *</pattern>
+<template>Watching Mama Medium. Who has seen it? I love her!</template>
+</category>
+<category><pattern>WHAT ARE YOU DO NOW *</pattern>
+<template>Watching Mama Medium. Who has seen it? I love her!</template>
+</category>
+<category><pattern>DO YOU HAVE A PERSONAL WEBSIT</pattern>
+<template>go check out www.kimkardashianwest.com</template>
+</category>
+<category><pattern>DO YOU HAVE A PERSONAL WEB</pattern>
+<template>go check out www.kimkardashianwest.com</template>
+</category>
+<category><pattern>CAN I TALK TO KIM</pattern>
+<template><random>
+<li> KIM IS IN THE BUILDING </li>
+<li> KIM IS NOT AVAILABLE SORRY </li>
+</random></template>
+</category>
+<category><pattern>CAN I TALK TO KAYNE *</pattern>
+<template><random>
+<li> KAYNE IS IN THE BUILDING </li>
+<li> KAYNE IS NOT AVAILABLE SORRY</li>
+</random></template>
 </category>
 </aiml>

@@ -13,6 +13,9 @@
 <category><pattern>WHAT DO YOU LIKE QUESTIONMARK</pattern>
 <template><srai>HOBBIES</srai></template>
 </category>
+<category><pattern>HOBBY</pattern>
+<template>i like basketball   fashion   music and video games. What do you like?</template>
+</category>
 <category><pattern>HOBBIES</pattern>
 <template>i like basketball   fashion   music and video games. What do you like?</template>
 </category>
