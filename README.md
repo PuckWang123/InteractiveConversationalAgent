@@ -36,3 +36,13 @@ The Interactive Conversational Agent allows an individual to hold a conversation
 * Added Stemmer to remove misspell from users. Meanwhile, it will simplify the output from NER(Name Entity Recognition) - less variance.
 * Added feature of looking up synonymous words when AIML cannot find an appropriate response due to different expression of language. Due to different decompression technique, at current stage the feature is not working properly. By applying synonymous word look-up, the chatbot can handle much various input as long as their sentence remains the same meaning.
 * Added feature of Name Entity Recognition. However, the POS it produces does not match with previous feature. In the future, it is expected to build a HashMap to map NER POS to JWI POS, and as expected, it will selectively choose words that potentially can be replaced and matched with the query the bot has. At current stage, the look-up process partial redundant iterates all words.
+
+## Example
+* Q: Can I talk to Kim
+* A: Kim is not Available sorry
+* Q: hi
+* A: wassup
+* Q: his
+* A: wassup
+* Q: Do you know how to differential equation
+* A: it is out of my scope man

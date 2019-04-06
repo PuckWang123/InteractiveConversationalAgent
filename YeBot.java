@@ -63,26 +63,16 @@ public class YeBot {
 			input = null;
 			input = conversation.recieveInput();
 			
-			input = handle_spell(input);
+			String temp = handle_spell(input);
 			
 			// knowning the entity of the words, finding synonym
 			//NOTE: StanfordCoreNLP is working but produces different POS enums from JWI, therefore, it is not applicable
 			try {
-				String[] words = input.split(" ");
-//				Sentence sent = new Sentence(input);
-//				List<String> nerTags = sent.nerTags(); // [PERSON, O, O, O, O, O, O, O]
-//				for (int z = 0; z < nerTags.size(); z++) {
-//					String tag = sent.posTag(z);
-//					System.out.println(tag);
-//					if(tag =="IN" || tag == "DT" || tag == "WP" || tag == "WP$" || tag =="WRB" || tag == "CC" || tag == "CD")
-//						nerTags.remove(z);
-//				}
-				
 				if (input!=""&&input!=null&&input.length()>1||i==1) {
 					if(input==""||input==null||input.length()<1) {
 						//start conversation
 						conversation.response("Ye is in the BUILDING NOW!");
-						i=0;	
+						i=0;
 					}
 					else if(conversation.isContained(input)) {
 						//user calls for exiting the conversation
@@ -97,8 +87,23 @@ public class YeBot {
 					}
 					else {
 						//regular response
-						input = find_syn(words, dict, pos, session);
-						conversation.response(session.multisentenceRespond(input));
+						if(input != null) {
+							String[] words = input.split(" ");
+							Sentence sent = new Sentence(input);
+							List<String> nerTags = sent.nerTags(); // [PERSON, O, O, O, O, O, O, O]
+							for (int z = 0; z < nerTags.size(); z++) {
+								String tag = sent.posTag(z);
+								System.out.println(tag);
+			//					if(tag =="IN" || tag == "DT" || tag == "WP" || tag == "WP$" || tag =="WRB" || tag == "CC" || tag == "CD")
+			//						nerTags.remove(z);
+							}
+						}
+//						input = find_syn(words, dict, pos, session);
+						String output = session.multisentenceRespond(input);
+						if(containedRandomResponse(output)) {
+							output = session.multisentenceRespond(temp);
+						}
+						conversation.response(output);
 					}
 				}
 			}catch(Exception e) {}
