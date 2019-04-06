@@ -11,7 +11,6 @@ The Interactive Conversational Agent allows an individual to hold a conversation
 * Stemmer: This class uses Portor Stemmer Algorithm to remove misspelling from user input.
 * BDialog: This class is responsible to create a Graphical User Interface for the conversation between the user and the Chatbot.
 * Conversation: This class is responsible to communicate and transfer user inputs and chatbot outputs.
-* YeBot: YeBot is the main class for the interaction between a user and the chatbot.
 
 ## How to Compile and Run the Code
 **Enter the following code into command line to run Yebot:**
