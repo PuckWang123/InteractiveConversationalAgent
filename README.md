@@ -21,7 +21,7 @@ The Interactive Conversational Agent allows an individual to hold a conversation
 **Or run the yebot.java file**
 
 ## NOTE
-* A cleanup is required. When you use the repo, please unzip the lib fold.
+* Please download StanfordCoreNLP 3.9.2 package in advance.
 
 ## Built With
 
@@ -33,5 +33,6 @@ The Interactive Conversational Agent allows an individual to hold a conversation
 ## What's new
 * Added new responses for kim kardashian as additional topic.
 * Added more flexible responses when the chatbot is unable to reply.
-* Added feature of looking up synonymous words when AIML cannot find an appropriate response due to different expression of language. Due to different decompression technique, at current stage the feature is not working properly.
-* Added feature of Name Entity Recognition. However, the POS it produces does not match with previous feature.
+* Added Stemmer to remove misspell from users. Meanwhile, it will simplify the output from NER(Name Entity Recognition) - less variance.
+* Added feature of looking up synonymous words when AIML cannot find an appropriate response due to different expression of language. Due to different decompression technique, at current stage the feature is not working properly. By applying synonymous word look-up, the chatbot can handle much various input as long as their sentence remains the same meaning.
+* Added feature of Name Entity Recognition. However, the POS it produces does not match with previous feature. In the future, it is expected to build a HashMap to map NER POS to JWI POS, and as expected, it will selectively choose words that potentially can be replaced and matched with the query the bot has. At current stage, the look-up process partial redundant iterates all words.
