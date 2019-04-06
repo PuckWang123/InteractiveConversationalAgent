@@ -16,8 +16,8 @@ import java.awt.event.AdjustmentListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.TitledBorder;
-
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
+//import com.sun.glass.events.KeyEvent;
 import java.awt.event.KeyAdapter;
 @SuppressWarnings("serial")
 public class BDialog extends JDialog {
